@@ -24,6 +24,26 @@ const story = `My friend and I started a secret club! We meet every day by the <
 
 form.addEventListener("submit", function (event){
     event.preventDefault()
+    if(adj1.value==""){alert(`${adj1.name} must be filled out!`)
+    adj1.focus()}
+    else if(noun1==''){alert(`${noun1.name} must be filled out!`)
+    adj1.focus()}
+    else if(adj2==''){alert(`${adj2.name} must be filled out!`)
+    adj1.focus()}
+    else if(clothing==''){alert(`${clothing.name} must be filled out!`)
+    adj1.focus()}
+    else if(bodyPart==''){alert(`${bodyPart.name} must be filled out!`)
+    adj1.focus()}
+    else if(verb1==''){alert(`${verb1.name} must be filled out!`)
+    adj1.focus()}
+    else if(food==''){alert(`${food.name} must be filled out!`)
+    adj1.focus()}
+    else{madLibStoryDisplay()}
+
+})
+
+function madLibStoryDisplay(){
+
     madLibDisplay.innerHTML=story
                                 .replace(`${adj1}`,adj1.value)
                                 .replace(`${noun1}`,noun1.value)
@@ -32,5 +52,4 @@ form.addEventListener("submit", function (event){
                                 .replace(`${bodyPart}`,bodyPart.value)
                                 .replace(`${verb1}`,verb1.value) 
                                 .replace(`${food}`,food.value)
-
-})
+}
